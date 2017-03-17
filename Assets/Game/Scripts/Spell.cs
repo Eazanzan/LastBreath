@@ -26,7 +26,16 @@ public class Spell : MonoBehaviour {
 		live = false;
 		this.GetComponent<Rigidbody> ().velocity = new Vector3 (0, 0, 0);
 		this.transform.position = initPos;
-		Spells.getInstance ().fireSpells.Push (this.gameObject);
+		if(element.CompareTo("fire")==0)
+			Spells.getInstance ().fireSpells.Push (this.gameObject);
+		if (element.CompareTo ("water")==0)
+			Spells.getInstance ().waterSpells.Push (this.gameObject);
+		if(element.CompareTo("earth")==0)
+			Spells.getInstance ().earthSpells.Push (this.gameObject);
+		if (element.CompareTo ("wind")==0)
+			Spells.getInstance ().windSpells.Push (this.gameObject);
+		if(element.CompareTo("lightning")==0)
+			Spells.getInstance ().lightningSpells.Push (this.gameObject);
 	}
 
 	public void setPos(Vector3 pos){
